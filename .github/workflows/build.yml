@@ -6,10 +6,15 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
     - name: Check out code
@@ -49,6 +54,8 @@ jobs:
   docker:
     name: Build Docker Image
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
     - name: Check out code
@@ -69,6 +76,8 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
     - name: Check out code
