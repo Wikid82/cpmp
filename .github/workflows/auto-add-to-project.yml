@@ -25,7 +25,7 @@ jobs:
         uses: actions/add-to-project@31b3f3ccdc584546fc445612dec3f38ff5edb41c # v0.5.0
         with:
           project-url: ${{ secrets.PROJECT_URL }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
 
       - name: Skip summary
         if: steps.project_check.outputs.has_project == 'false'
